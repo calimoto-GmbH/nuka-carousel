@@ -830,9 +830,10 @@ export default class Carousel extends React.Component {
         ? `${this.props.cellSpacing / 2 * -1}px 0px`
         : `0px ${this.props.cellSpacing / 2 * -1}px`,
       padding: 0,
-      height: this.props.vertical
-        ? listWidth + spacingOffset
-        : this.state.slideHeight,
+      // height: this.props.vertical
+      //   ? listWidth + spacingOffset
+      //   : this.state.slideHeight,
+      height: "fit-content",
       width: this.props.vertical ? 'auto' : listWidth + spacingOffset,
       cursor: this.state.dragging === true ? 'pointer' : 'inherit',
       boxSizing: 'border-box',
@@ -861,15 +862,21 @@ export default class Carousel extends React.Component {
   getSlideStyles(index, positionValue) {
     const targetPosition = this.getSlideTargetPosition(index, positionValue);
     return {
-      position: 'absolute',
+
+      // position: 'absolute',
+
       left: this.props.vertical ? 0 : targetPosition,
       top: this.props.vertical ? targetPosition : 0,
       display: this.props.vertical ? 'block' : 'inline-block',
       listStyleType: 'none',
       verticalAlign: 'top',
       width: this.props.vertical ? '100%' : this.state.slideWidth,
-      height: 'auto',
-      minHeight: '100%',
+      height: 'fit-content',
+      // minHeight: '100%',
+
+      height: index === this.state.currentSlide ? "auto" : "0px",
+      minHeight: "initial",
+
       boxSizing: 'border-box',
       MozBoxSizing: 'border-box',
       marginLeft: this.props.vertical ? 'auto' : this.props.cellSpacing / 2,
