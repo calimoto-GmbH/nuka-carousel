@@ -107,7 +107,9 @@ export class PagingDots extends React.Component {
       <ul style={this.getListStyles()}>
         {indexes.map(index => {
           return (
-            <li style={this.getListItemStyles()} key={index}>
+            <li style={this.getListItemStyles()} key={index}
+              className={"slider-control-item" + (this.props.currentSlide === index ? " slider-control-item-active" : "")}
+            >
               <button
                 style={this.getButtonStyles(this.props.currentSlide === index)}
                 onClick={this.props.goToSlide.bind(null, index)}
