@@ -165,7 +165,8 @@ function (_React$Component3) {
       }, indexes.map(function (index) {
         return React.createElement("li", {
           style: _this3.getListItemStyles(),
-          key: index
+          key: index,
+          className: "slider-control-item" + (_this3.props.currentSlide === index ? " slider-control-item-active" : "")
         }, React.createElement("button", {
           style: _this3.getButtonStyles(_this3.props.currentSlide === index),
           onClick: _this3.props.goToSlide.bind(null, index)
