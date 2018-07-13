@@ -837,8 +837,8 @@ function (_React$Component) {
         width: this.props.vertical ? 'auto' : listWidth + spacingOffset,
         cursor: this.state.dragging === true ? 'pointer' : 'inherit',
         boxSizing: 'border-box',
-        MozBoxSizing: 'border-box',
-        touchAction: 'none'
+        MozBoxSizing: 'border-box' // touchAction: 'none'
+
       };
     }
   }, {
